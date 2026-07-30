@@ -192,13 +192,14 @@
     var lang = state.lang;
     var flat = certFlatList();
     var idx = 0;
-    var html = EDUCATION.map(function(course) {
+    var html = EDUCATION.map(function(course, ci) {
+      var dir = (ci % 2 === 0) ? 'left' : 'right';
       var certsHtml = course.certs.map(function(cert) {
         var myIndex = idx++;
         var rot = cert.rot || 0, dx = cert.dx || 0, dy = cert.dy || 0, z = cert.z || 1;
         return '<img src="' + cert.img + '" alt="' + cert.label + '" title="' + cert.label + '" data-cert-index="' + myIndex + '" style="position:absolute;left:0;bottom:0;width:158px;height:112px;object-fit:cover;border:2px solid #010A00;box-shadow:0 14px 34px rgba(0,0,0,.55);transform:rotate(calc(' + rot + 'deg * (1 - var(--spread)))) translate(calc(var(--spread) * ' + dx + 'px), calc(var(--spread) * ' + dy + 'px)) scale(calc(1 + var(--spread) * 0.05));transition:transform .4s cubic-bezier(.2,.8,.2,1);z-index:' + z + ';cursor:pointer">';
       }).join('');
-      return '<div style="position:relative;border:1px solid rgba(255,255,255,.1);padding:26px;padding-bottom:172px;overflow:visible;--spread:0" data-hover="--spread:1" class="dedu-card">' +
+      return '<div style="position:relative;border:1px solid rgba(255,255,255,.1);padding:26px;padding-bottom:172px;overflow:visible;--spread:0" data-hover="--spread:1" data-reveal-x="' + dir + '" class="dedu-card">' +
         '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:700;font-size:12px;color:#B8EA07;letter-spacing:.04em">' + course.year + '</span>' +
         '<h3 style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:700;font-size:18px;margin:8px 0 4px;max-width:220px">' + course.title[lang] + '</h3>' +
         '<p style="margin:0;font-size:13px;color:#71717a">' + course.org + '</p>' +
@@ -208,6 +209,7 @@
     var grid = document.getElementById('education-grid');
     grid.innerHTML = html;
     attachHover(grid);
+    observeRevealX(grid);
     grid.querySelectorAll('[data-cert-index]').forEach(function(img) {
       img.addEventListener('click', function() { openModal(parseInt(img.getAttribute('data-cert-index'), 10)); });
     });
@@ -215,14 +217,15 @@
 
   function renderProjects() {
     var lang = state.lang;
-    var html = PROJECTS.map(function(p) {
+    var html = PROJECTS.map(function(p, i) {
       var mediaHtml = p.noCover
         ? '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#0c1408">' +
             '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(184,234,7,.5)" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>' +
             '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:600;font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.04em;text-transform:uppercase">' + STR[lang].inProgress + '</span>' +
           '</div>'
         : '<img src="' + p.cover + '" alt="' + p.title + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--img-scale));transition:transform .6s ease">';
-      return '<a href="' + p.href + '" style="opacity:1;position:relative;height:300px;overflow:hidden;border:1px solid rgba(255,255,255,.1);display:block;--img-scale:1;--scrim-o:.55;--info-y:0px;transition:border-color .3s ease" data-hover="--img-scale:1.06;--scrim-o:.8;--info-y:-6px;border-color:#B8EA07" class="dprojcard">' +
+      var dir = (i % 2 === 0) ? 'left' : 'right';
+      return '<a href="' + p.href + '" data-reveal-x="' + dir + '" style="position:relative;height:300px;overflow:hidden;border:1px solid rgba(255,255,255,.1);display:block;--img-scale:1;--scrim-o:.55;--info-y:0px;transition:border-color .3s ease" data-hover="--img-scale:1.06;--scrim-o:.8;--info-y:-6px;border-color:#B8EA07" class="dprojcard">' +
         mediaHtml +
         '<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(1,10,0,.85) 0%,rgba(1,10,0,var(--scrim-o)) 45%,transparent 85%);transition:background .4s ease"></div>' +
         '<span style="position:absolute;top:20px;left:20px;font-family:\'Bricolage Grotesque\',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.04em">' + p.num + '</span>' +
@@ -236,10 +239,11 @@
     var grid = document.getElementById('projects-grid');
     grid.innerHTML = html;
     attachHover(grid);
+    observeRevealX(grid);
   }
 
-  function testimonialCardHtml(t, lang) {
-    return '<div style="width:380px;height:200px;flex-shrink:0;background:#070d05;border:1px solid rgba(255,255,255,.1);padding:24px;display:flex;flex-direction:column" class="dtesticard">' +
+  function testimonialCardHtml(t, lang, dir) {
+    return '<div data-reveal-x="' + dir + '" style="width:380px;height:200px;flex-shrink:0;background:#070d05;border:1px solid rgba(255,255,255,.1);padding:24px;display:flex;flex-direction:column" class="dtesticard">' +
       '<p style="margin:0 0 16px;font-size:12.5px;line-height:1.55;color:#d4d4d8;flex:1;overflow:hidden">' + t.quote[lang] + '</p>' +
       '<div style="display:flex;align-items:center;gap:12px">' +
         '<img src="' + t.avatar + '" alt="' + t.name + '" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0">' +
@@ -256,13 +260,33 @@
 
   function renderTestimonials() {
     var lang = state.lang;
-    var row1 = T1.concat(T1).map(function(t) { return testimonialCardHtml(t, lang); }).join('');
-    var row2 = T2.concat(T2).map(function(t) { return testimonialCardHtml(t, lang); }).join('');
-    document.getElementById('testi-row-1').innerHTML = row1;
-    document.getElementById('testi-row-2').innerHTML = row2;
-    attachHover(document.getElementById('testi-row-1'));
-    attachHover(document.getElementById('testi-row-2'));
+    var row1 = T1.concat(T1).map(function(t, i) { return testimonialCardHtml(t, lang, i % 2 === 0 ? 'left' : 'right'); }).join('');
+    var row2 = T2.concat(T2).map(function(t, i) { return testimonialCardHtml(t, lang, i % 2 === 0 ? 'right' : 'left'); }).join('');
+    var r1 = document.getElementById('testi-row-1');
+    var r2 = document.getElementById('testi-row-2');
+    r1.innerHTML = row1;
+    r2.innerHTML = row2;
+    attachHover(r1);
+    attachHover(r2);
+    observeRevealX(r1);
+    observeRevealX(r2);
   }
+
+  function observeRevealX(root) {
+    var els = root.querySelectorAll('[data-reveal-x]:not(.reveal-x-bound)');
+    els.forEach(function(el) {
+      el.classList.add('reveal-x-bound');
+      revealXObserver.observe(el);
+    });
+  }
+  var revealXObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealXObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
 
   function renderMarquee() {
     var text = STR[state.lang].marquee;
@@ -555,7 +579,8 @@
       }
       if (header) {
         header.style.top = '0px';
-        header.style.width = '100%';
+        header.style.left = '0px';
+        header.style.width = 'auto';
         header.style.maxWidth = 'none';
         header.style.borderRadius = '0px';
         header.style.padding = '20px clamp(20px,4vw,56px)';

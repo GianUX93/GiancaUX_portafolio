@@ -14,15 +14,26 @@
   [data-reveal] { animation: fadeUp .7s ease both; }
   .frame-wrap { display: flex; justify-content: center; }
   .frame-wrap > div { max-width: 100%; }
+  @media (max-width: 760px) {
+    section[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+    section[style*="grid-template-columns"] > div[style*="height:460px"],
+    section[style*="grid-template-columns"] > div[style*="height:420px"],
+    section[style*="grid-template-columns"] > div[style*="height:340px"],
+    section[style*="grid-template-columns"] > div[style*="height:300px"] { height: auto !important; }
+    div[style*="grid-template-rows:380px 260px"] { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+    div[style*="grid-template-rows:380px 260px"] > div { grid-column: span 1 !important; height: auto !important; }
+    section[style*="grid-template-columns"] img,
+    div[style*="grid-template-rows:380px 260px"] img { height: auto !important; object-fit: contain !important; }
+  }
 </style>
 </head>
 <body>
 <header style="position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(1,10,0,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:20px clamp(20px,4vw,56px)">
-  <a href="../index.html" style="display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;color:#FFFFFF">
+  <a href="../index.html#proyectos" style="display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;color:#FFFFFF">
     <span style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid rgba(255,255,255,.25);border-radius:50%"><img src="../assets/icons/arrow-left.svg" alt="" style="width:14px;height:14px;filter:brightness(0) invert(1)"></span>
-    Volver al portafolio
+    Volver
   </a>
-  <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;letter-spacing:.04em;color:#B8EA07">N°05 · REVISORES</span>
+  <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;letter-spacing:.04em;color:#B8EA07">REVISORES</span>
 </header>
 
 <section style="padding:120px clamp(20px,4vw,56px) 60px;border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Case hero">
@@ -58,8 +69,6 @@
 <section style="padding:80px clamp(20px,4vw,56px);border-bottom:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:1fr 1.4fr;gap:60px" data-screen-label="El reto">
   <div data-reveal="">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.1</span>
-      <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
       <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">El reto</span>
     </div>
     <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,32px);margin:0;max-width:360px">Un flujo de validación sin trazabilidad ni una sola fuente de verdad</h2>
@@ -80,8 +89,6 @@
 <!-- EL PROCESO -->
 <section style="padding:80px clamp(20px,4vw,56px);border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="El proceso">
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.2</span>
-    <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">El proceso</span>
   </div>
   <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:680px">Tres bandejas para ver el ciclo de vida completo de cada folio</h2>
@@ -107,8 +114,6 @@
   </div>
   <div data-reveal="">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.3</span>
-      <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
       <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">El detalle del avalúo</span>
     </div>
     <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,32px);margin:0 0 20px">Toda la conversación de la revisión, ordenada por etapa</h2>
@@ -119,8 +124,6 @@
 <!-- INCIDENCIAS -->
 <section style="padding:80px clamp(20px,4vw,56px);border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Solicitar y liberar">
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.4</span>
-    <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Escalar una incidencia</span>
   </div>
   <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:640px">Cuando algo sale del control del revisor, el sistema lo hace explícito</h2>
@@ -139,8 +142,6 @@
 <!-- EVIDENCIA -->
 <section style="padding:80px clamp(20px,4vw,56px);border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Evidencia y documentación">
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.5</span>
-    <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Evidencia y documentación</span>
   </div>
   <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 48px;max-width:640px">Fotos, mapa y expedientes sin salir del navegador</h2>
@@ -161,8 +162,6 @@
 <!-- REVISIÓN TÉCNICA -->
 <section style="padding:80px clamp(20px,4vw,56px);border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Revisión técnica y homologación">
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.6</span>
-    <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Revisión técnica y homologación</span>
   </div>
   <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:680px">El corazón del producto: comparar documento contra documento, campo a campo</h2>
@@ -181,8 +180,6 @@
 <!-- RESULTADO -->
 <section style="padding:80px clamp(20px,4vw,56px)" data-screen-label="El resultado">
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.02em;white-space:nowrap">N°5.7</span>
-    <span style="width:32px;height:1px;background:rgba(184,234,7,.5)"></span>
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">El resultado</span>
   </div>
   <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:680px">Un dashboard de liberación que convierte cada revisión en una métrica</h2>

@@ -48,6 +48,9 @@
   };
 
   var EDUCATION = [
+    { title: { es: 'Inteligencia Artificial para UX/UI Designers', en: 'AI for UX/UI Designers' }, org: 'uxcristopher', year: '2026', certs: [
+      { img: 'assets/certs/uxcristopher-ia-uxui.webp', label: 'Certificado de finalización' }
+    ] },
     { title: { es: 'Code 101 — Elemental Software Development', en: 'Code 101 — Elemental Software Development' }, org: 'Enter Tech School', year: '2026', certs: [
       { img: 'assets/certs/enter-code101.webp', label: 'Code 101' }
     ] },

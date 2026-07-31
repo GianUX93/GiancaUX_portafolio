@@ -41,6 +41,8 @@
   .mobile-menu { display: none; }
   .mobile-menu.open { display: flex; }
   @media (max-width: 860px) {
+    #site-header { padding-right: 20px !important; padding-left: 20px !important; }
+    .mobile-menu { width: auto !important; max-width: none !important; left: 0 !important; right: 0 !important; box-sizing: border-box !important; padding-right: 20px !important; padding-left: 20px !important; }
     .dnav, .davail { display: none !important; }
     .dmenubtn { display: flex !important; }
     .dhablemos { display: none !important; }
@@ -105,7 +107,7 @@
 <div style="min-height:100%;background:#010A00;text-align:left">
 
   <!-- NAV -->
-  <header id="site-header" style="position:fixed;top:0;left:0;right:0;width:auto;box-sizing:border-box;z-index:50;isolation:isolate;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,4vw,56px);background:rgba(1,10,0,.55);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.1);-webkit-transform:translateZ(0);transform:translateZ(0);will-change:transform">
+  <header id="site-header" style="position:fixed;top:0;left:0;right:0;width:auto;max-width:none;box-sizing:border-box;z-index:50;isolation:isolate;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,4vw,56px);background:rgba(1,10,0,.55);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.1);-webkit-transform:translateZ(0);transform:translateZ(0);will-change:transform">
     <a href="#hero" style="display:block;line-height:0"><img src="assets/logo.svg" alt="gianca" style="height:22px;width:auto;display:block"></a>
     <nav style="display:flex;align-items:center;gap:28px" class="dnav">
       <a href="#sobre-mi" data-nav-id="sobre-mi" data-i18n="navSobre" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:14px;color:#FFFFFF;padding-bottom:3px;border-bottom:2px solid transparent;transition:color .2s ease,border-color .2s ease" data-hover="color:#B8EA07;border-bottom-color:rgba(184,234,7,.5)">Sobre mí</a>
@@ -159,7 +161,7 @@
   </div>
 
   <!-- HERO -->
-  <section id="hero" style="position:relative;padding:0;border-bottom:1px solid rgba(255,255,255,.08);min-height:min(92vh,980px)" data-screen-label="Hero">
+  <section id="hero" style="position:relative;overflow-x:clip;padding:0;border-bottom:1px solid rgba(255,255,255,.08);min-height:min(92vh,980px)" data-screen-label="Hero">
     <img src="assets/pattern.svg" alt="" style="position: absolute; left: 50%; top: 422px; transform: translate(-50%,-50%); width: min(560px,58vw); opacity: .6; pointer-events: none; z-index: 0">
 
     <div style="position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;padding:min(6vw,56px) clamp(20px,4vw,56px) 0;text-align:center">

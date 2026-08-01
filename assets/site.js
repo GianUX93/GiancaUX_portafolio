@@ -443,6 +443,10 @@
     }
     alignSubtext();
     window.addEventListener('resize', alignSubtext, { passive: true });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(alignSubtext);
+    }
+    setTimeout(alignSubtext, 300);
 
     var heroEl3 = document.getElementById('hero');
     var portraitImg = document.getElementById('hero-portrait-img');

@@ -583,9 +583,9 @@
       if (header) {
         header.style.top = '0px';
         header.style.left = '0px';
-        header.style.right = '0px';
-        header.style.width = 'auto';
-        header.style.maxWidth = 'none';
+        header.style.right = 'auto';
+        header.style.width = window.innerWidth + 'px';
+        header.style.maxWidth = window.innerWidth + 'px';
         header.style.borderRadius = '0px';
         header.style.padding = window.matchMedia('(max-width: 860px)').matches ? '20px' : '20px clamp(20px,4vw,56px)';
         header.style.background = scrolled ? 'rgba(1,10,0,.7)' : 'rgba(1,10,0,.55)';

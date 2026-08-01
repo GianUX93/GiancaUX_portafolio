@@ -581,8 +581,9 @@
         var holaSoy = document.getElementById('hero-hola-soy');
         var subtext = document.getElementById('hero-subtext');
         var fadeOut = String(Math.max(0, 1 - progress * 1.4));
+        var subtextFade = String(Math.max(0, 1 - progress * 2.4));
         if (holaSoy) holaSoy.style.opacity = fadeOut;
-        if (subtext) subtext.style.opacity = fadeOut;
+        if (subtext) subtext.style.opacity = subtextFade;
       }
       if (header) {
         header.style.top = '0px';

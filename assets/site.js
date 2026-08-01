@@ -627,6 +627,7 @@
         a.style.fontWeight = isActive ? '700' : '500';
         a.style.borderBottomColor = isActive ? '#B8EA07' : 'transparent';
       });
+      alignSubtext();
     }
     window.addEventListener('scroll', onScroll, { passive: true, capture: true });
     document.addEventListener('scroll', onScroll, { passive: true, capture: true });

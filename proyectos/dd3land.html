@@ -12,6 +12,10 @@
   a:hover { color: #B8EA07; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
   [data-reveal] { animation: fadeUp .7s ease both; }
+  @media (max-width: 900px) {
+    #hero-side-image { display: none !important; }
+    #hero-content-col { max-width: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -23,32 +27,39 @@
   <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;letter-spacing:.04em;color:#B8EA07">DD3.LAND</span>
 </header>
 
-<section style="padding:120px clamp(20px,4vw,56px) 60px;border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Case hero">
-  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#B8EA07;background:rgba(184,234,7,.1);border:1px solid rgba(184,234,7,.3);padding:6px 14px;border-radius:999px">Branding · 3D</span>
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">2023</span>
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">DD3 Capital Partners</span>
-  </div>
-  <h1 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,7vw,88px);line-height:.98;letter-spacing:-.02em;margin:0 0 28px;max-width:900px">DD3.Land <span style="color:#B8EA07">el primer metaverso hipotecario de México</span></h1>
-  <p data-reveal="" style="font-size:18px;line-height:1.7;color:#a1a1aa;max-width:640px;margin:0">DD3 Capital Partners quería que sus clientes conocieran sus 9 unidades de negocio de forma inmersiva. Diseñé un metaverso en tiempo real donde cada edificio de una ciudad representa un producto real: el usuario los descubre caminando —o volando— por el mapa.</p>
+<section style="position:relative;overflow:hidden;padding:120px clamp(20px,4vw,56px) 60px;border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Case hero">
+  <div id="hero-content-col" style="position:relative;z-index:1;max-width:920px">
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px">
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#B8EA07;background:rgba(184,234,7,.1);border:1px solid rgba(184,234,7,.3);padding:6px 14px;border-radius:999px">Branding · 3D</span>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">2023</span>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">DD3 Capital Partners</span>
+    </div>
+    <h1 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,7vw,88px);line-height:.98;letter-spacing:-.02em;margin:0 0 28px;max-width:1080px">DD3.Land <span style="color:#B8EA07">el primer metaverso hipotecario de México</span></h1>
+    <p data-reveal="" style="font-size:18px;line-height:1.7;color:#a1a1aa;max-width:760px;margin:0">DD3 Capital Partners quería que sus clientes conocieran sus 9 unidades de negocio de forma inmersiva. Diseñé un metaverso en tiempo real donde cada edificio de una ciudad representa un producto real: el usuario los descubre caminando —o volando— por el mapa.</p>
 
-  <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:56px">
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Rol</span>
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">UX · Dirección de arte</span>
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:56px">
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Rol</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">UX · Dirección de arte</span>
+      </div>
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Cliente</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">DD3 Capital Partners</span>
+      </div>
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Unidades de negocio</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">9</span>
+      </div>
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Link</span>
+        <a href="https://dd3.land/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;transition:color .2s ease" data-hover="color:#B8EA07">dd3.land<img src="../assets/icons/arrow-diagonal.svg" alt="" style="width:14px;height:14px;filter:brightness(0) invert(1)"></a>
+      </div>
     </div>
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Cliente</span>
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">DD3 Capital Partners</span>
-    </div>
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Unidades de negocio</span>
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">9</span>
-    </div>
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Link</span>
-      <a href="https://dd3.land/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;transition:color .2s ease" data-hover="color:#B8EA07">dd3.land<img src="../assets/icons/arrow-diagonal.svg" alt="" style="width:14px;height:14px;filter:brightness(0) invert(1)"></a>
-    </div>
+  </div>
+
+  <div id="hero-side-image" data-reveal="" style="position:absolute;top:0;right:0;bottom:0;width:56%;min-width:460px;overflow:hidden">
+    <img src="../assets/case-dd3land/hero.webp" alt="Pantalla de bienvenida al metaverso DD3.Land" style="width:100%;height:100%;object-fit:cover;object-position:left center;display:block">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,#010A00,transparent 22%)"></div>
   </div>
 </section>
 
@@ -56,8 +67,8 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">La entrada al mundo</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:720px">Una isla flotante como umbral antes de aterrizar en la ciudad</h2>
-  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:640px;margin:0 0 48px">El usuario aparece frente a una isla en el cielo: una casona, un molino de viento y el logo DD3.Land flotando sobre ella. Un solo botón, "Comenzar", marca el punto de no retorno hacia el metaverso.</p>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:760px">Una isla flotante como umbral antes de aterrizar en la ciudad</h2>
+  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:760px;margin:0 0 48px">El usuario aparece frente a una isla en el cielo: una casona, un molino de viento y el logo DD3.Land flotando sobre ella. Un solo botón, "Comenzar", marca el punto de no retorno hacia el metaverso.</p>
   <div data-reveal="" style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);max-width:720px;margin:0 auto">
     <img src="../assets/case-dd3land/intro-island.png" alt="Pantalla de inicio: isla flotante con casona, molino de viento y botón Comenzar" style="width:100%;height:auto;display:block">
   </div>
@@ -67,8 +78,8 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Una ciudad, 9 unidades de negocio</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:720px">Arquitectura, modernidad y cultura mexicana en cada cuadra</h2>
-  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:640px;margin:0 0 48px">El mapa está inspirado en la Ciudad de México: rascacielos financieros conviven con casonas de tejas rojas, parques con fuentes, y un parque eólico al filo de la ciudad — modernidad y tecnología entrelazadas con la cultura local. Cada edificio-torre representa una unidad de negocio DD3, con su nombre flotando encima al acercarse.</p>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:760px">Arquitectura, modernidad y cultura mexicana en cada cuadra</h2>
+  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:760px;margin:0 0 48px">El mapa está inspirado en la Ciudad de México: rascacielos financieros conviven con casonas de tejas rojas, parques con fuentes, y un parque eólico al filo de la ciudad — modernidad y tecnología entrelazadas con la cultura local. Cada edificio-torre representa una unidad de negocio DD3, con su nombre flotando encima al acercarse.</p>
 
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:12px">
     <div data-reveal="" style="grid-row:span 2;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
@@ -87,7 +98,7 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Onboarding y personalización</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 40px;max-width:640px">Login, bienvenida y avatar antes de entrar a la ciudad</h2>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 40px;max-width:760px">Login, bienvenida y avatar antes de entrar a la ciudad</h2>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
     <div data-reveal="" style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
@@ -106,8 +117,8 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Teletransporte por arrastre</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:640px">Arrastra tu avatar y suéltalo donde quieras explorar</h2>
-  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:640px;margin:0 0 48px">Desde la vista aérea, el usuario toma su avatar y lo arrastra hasta la zona de la ciudad que quiere visitar — sin menús ni listas, el desplazamiento se siente físico y directo.</p>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:760px">Arrastra tu avatar y suéltalo donde quieras explorar</h2>
+  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:760px;margin:0 0 48px">Desde la vista aérea, el usuario toma su avatar y lo arrastra hasta la zona de la ciudad que quiere visitar — sin menús ni listas, el desplazamiento se siente físico y directo.</p>
   <div data-reveal="" style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
     <img src="../assets/case-dd3land/avatar-drag-placement.png" alt="Vista aérea de la ciudad con el avatar siendo arrastrado hacia la zona a visitar, mensaje 'coloca el avatar en el lugar que quieres visitar'" style="width:100%;height:auto;display:block">
   </div>
@@ -117,7 +128,7 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Exploración inmersiva</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 40px;max-width:640px">Vista a pie, instrucciones y descubrimiento de producto</h2>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 40px;max-width:760px">Vista a pie, instrucciones y descubrimiento de producto</h2>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
     <div data-reveal="" style="grid-column:span 2;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">

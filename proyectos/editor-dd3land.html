@@ -21,6 +21,10 @@
   }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
   [data-reveal] { animation: fadeUp .7s ease both; }
+  @media (max-width: 900px) {
+    #hero-side-image { display: none !important; }
+    #hero-content-col { max-width: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -32,32 +36,39 @@
   <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;letter-spacing:.04em;color:#B8EA07">EDITOR.DD3.LAND</span>
 </header>
 
-<section style="padding:120px clamp(20px,4vw,56px) 60px;border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Case hero">
-  <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px">
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#B8EA07;background:rgba(184,234,7,.1);border:1px solid rgba(184,234,7,.3);padding:6px 14px;border-radius:999px">Product · Web app</span>
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">2023</span>
-    <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">DD3 Capital Partners</span>
-  </div>
-  <h1 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,7vw,88px);line-height:.98;letter-spacing:-.02em;margin:0 0 28px;max-width:900px">Editor.DD3.Land <span style="color:#B8EA07">la herramienta que construye el metaverso</span></h1>
-  <p data-reveal="" style="font-size:18px;line-height:1.7;color:#a1a1aa;max-width:640px;margin:0">Antes de que el usuario final camine por la ciudad de DD3.Land, el equipo necesita poblarla: edificios, materiales, texturas, escenas. Diseñé el editor 3D interno que le da a ese equipo control total sin código, sin depender de un desarrollador por cada cambio.</p>
+<section style="position:relative;overflow:hidden;padding:120px clamp(20px,4vw,56px) 60px;border-bottom:1px solid rgba(255,255,255,.08)" data-screen-label="Case hero">
+  <div id="hero-content-col" style="position:relative;z-index:1;max-width:920px">
+    <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:24px">
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:#B8EA07;background:rgba(184,234,7,.1);border:1px solid rgba(184,234,7,.3);padding:6px 14px;border-radius:999px">Product · Web app</span>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">2023</span>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13px;color:#a1a1aa">DD3 Capital Partners</span>
+    </div>
+    <h1 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,7vw,88px);line-height:.98;letter-spacing:-.02em;margin:0 0 28px;max-width:1080px">Editor.DD3.Land <span style="color:#B8EA07">la herramienta que construye el metaverso</span></h1>
+    <p data-reveal="" style="font-size:18px;line-height:1.7;color:#a1a1aa;max-width:760px;margin:0">Antes de que el usuario final camine por la ciudad de DD3.Land, el equipo necesita poblarla: edificios, materiales, texturas, escenas. Diseñé el editor 3D interno que le da a ese equipo control total sin código, sin depender de un desarrollador por cada cambio.</p>
 
-  <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:56px">
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Rol</span>
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">UX · UI de producto interno</span>
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:56px">
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Rol</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">UX · UI de producto interno</span>
+      </div>
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Usuario</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">Equipo interno DD3</span>
+      </div>
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Tipo</span>
+        <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">Editor 3D no-code</span>
+      </div>
+      <div style="background:#010A00;padding:22px 24px">
+        <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Conecta con</span>
+        <a href="dd3land.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;transition:color .2s ease" data-hover="color:#B8EA07">DD3.Land<img src="../assets/icons/arrow-diagonal.svg" alt="" style="width:14px;height:14px;filter:brightness(0) invert(1)"></a>
+      </div>
     </div>
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Usuario</span>
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">Equipo interno DD3</span>
-    </div>
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Tipo</span>
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px">Editor 3D no-code</span>
-    </div>
-    <div style="background:#010A00;padding:22px 24px">
-      <span style="display:block;font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Conecta con</span>
-      <a href="dd3land.html" style="display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;transition:color .2s ease" data-hover="color:#B8EA07">DD3.Land<img src="../assets/icons/arrow-diagonal.svg" alt="" style="width:14px;height:14px;filter:brightness(0) invert(1)"></a>
-    </div>
+  </div>
+
+  <div id="hero-side-image" data-reveal="" style="position:absolute;top:0;right:0;bottom:0;width:56%;min-width:460px;overflow:hidden">
+    <img src="../assets/case-editor-dd3/hero.webp" alt="Vista del editor 3D de Editor.DD3.Land, con la ciudad renderizada y el panel de materiales" style="width:100%;height:100%;object-fit:cover;object-position:left center;display:block">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,#010A00,transparent 22%)"></div>
   </div>
 </section>
 
@@ -65,7 +76,7 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:15px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Acceso al editor</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 40px;max-width:640px">Login corporativo, con la misma identidad visual del metaverso</h2>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 40px;max-width:760px">Login corporativo, con la misma identidad visual del metaverso</h2>
   <div data-reveal="" style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
     <img src="../assets/case-editor-dd3/login.webp" alt="Pantalla de login de Editor.DD3.Land con acceso por Google o email" style="width:100%;height:auto;display:block">
   </div>
@@ -75,8 +86,8 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:15px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">Gestión de proyectos</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:640px">Cada mundo es un proyecto: grid o lista, según cómo trabaje el equipo</h2>
-  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:640px;margin:0 0 48px">La pantalla de Proyectos permite alternar entre vista de tarjetas (para reconocer visualmente cada mundo) y vista de tabla (para gestionar muchos a la vez), además de crear uno nuevo con nombre, descripción y thumbnail.</p>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:760px">Cada mundo es un proyecto: grid o lista, según cómo trabaje el equipo</h2>
+  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:760px;margin:0 0 48px">La pantalla de Proyectos permite alternar entre vista de tarjetas (para reconocer visualmente cada mundo) y vista de tabla (para gestionar muchos a la vez), además de crear uno nuevo con nombre, descripción y thumbnail.</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
     <div data-reveal="" style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
@@ -95,8 +106,8 @@
   <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:32px">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:15px;color:#FFFFFF;letter-spacing:.16em;text-transform:uppercase">El editor 3D</span>
   </div>
-  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:640px">Escenas, materiales y texturas: el pipeline completo sin escribir código</h2>
-  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:640px;margin:0 0 40px">El flujo del editor sigue un pipeline claro: crear o editar el mundo, configurar materiales y texturas, ajustar las escenas y publicar el cambio directo al metaverso.</p>
+  <h2 data-reveal="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);margin:0 0 20px;max-width:760px">Escenas, materiales y texturas: el pipeline completo sin escribir código</h2>
+  <p data-reveal="" style="font-size:16px;line-height:1.75;color:#a1a1aa;max-width:760px;margin:0 0 40px">El flujo del editor sigue un pipeline claro: crear o editar el mundo, configurar materiales y texturas, ajustar las escenas y publicar el cambio directo al metaverso.</p>
 
   <div data-reveal="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-bottom:48px">
     <div style="background:#010A00;padding:22px 20px">

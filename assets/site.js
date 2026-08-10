@@ -132,7 +132,7 @@
       description: { es: 'Software de automatización de flujos internos para el equipo operativo.', en: 'Internal workflow automation software for the operations team.' } },
     { num: '02', href: 'proyectos/dd3land.html', cover: 'assets/case-dd3land/aerial-city-cdmx.png', title: 'DD3.land', tag: 'Branding · 3D',
       description: { es: 'Metaverso del ecosistema de productos hipotecarios de la marca.', en: "The brand's mortgage product ecosystem metaverse." } },
-    { num: '03', href: 'proyectos/builder.html', cover: 'assets/case-builder/components-overview.webp', title: 'Builder', tag: 'Design system',
+    { num: '03', href: 'proyectos/builder.html', cover: 'assets/case-builder/components-overview.webp', title: 'Build', tag: 'Design system',
       description: { es: 'Sistema de diseño escalable para la plataforma DD360.', en: 'Scalable design system for the DD360 platform.' } },
     { num: '04', href: 'proyectos/revisores.html', cover: 'assets/case-revisores/revisores-05.png', title: 'Revisores', tag: 'B2B · UX',
       description: { es: 'Digitalización de procesos B2B para Corporación Mexicana de Valuación.', en: 'B2B process digitization for Corporación Mexicana de Valuación.' } },

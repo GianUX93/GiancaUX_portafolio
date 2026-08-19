@@ -136,8 +136,8 @@
       description: { es: 'Sistema de diseño escalable para la plataforma DD360.', en: 'Scalable design system for the DD360 platform.' } },
     { num: '04', href: 'proyectos/revisores.html', cover: 'assets/case-revisores/revisores-05.png', title: 'Revisores', tag: 'B2B · UX',
       description: { es: 'Digitalización de procesos B2B para Corporación Mexicana de Valuación.', en: 'B2B process digitization for Corporación Mexicana de Valuación.' } },
-    { num: '05', href: '#proyectos', noCover: true, title: 'DD360 platform', tag: 'UX/UI · Fintech',
-      description: { es: 'Gestión integral de créditos hipotecarios de principio a fin.', en: 'End-to-end mortgage loan management.' } },
+    { num: '05', href: 'proyectos/dd360.html', cover: 'assets/case-dd360/home.webp', title: 'DD360 platform', tag: 'UX/UI · Fintech',
+      description: { es: 'Crédito digital y gestión de proyectos inmobiliarios en un solo ecosistema.', en: 'Digital credit and real-estate project management in one ecosystem.' } },
     { num: '06', href: '#proyectos', noCover: true, title: 'Perú clima', tag: 'Mobile app',
       description: { es: 'App de control climático para turistas locales y extranjeros.', en: 'Weather-tracking app for local and foreign tourists.' } }
   ];

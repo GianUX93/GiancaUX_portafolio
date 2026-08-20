@@ -17,7 +17,7 @@
       valueTitle2: 'Co-creación con ingeniería', valueDesc2: 'Sistemas de diseño robustos que hablan el idioma del dev: tokens, componentes, handoff limpio. Compresión básica de lenguajes html 5 y CSS',
       expLabel: 'Experiencia', expHeadlinePre: '14 años trabajando en', expHeadlineHl: 'la industria digital',
       eduLabel: 'Formación académica', eduHeadlinePre: 'El aprendizaje continuo es parte de', eduHeadlineHl: 'mi día a día',
-      certPlaceholder: 'Certificado', inProgress: 'En construcción',
+      certPlaceholder: 'Certificado', inProgress: 'En construcción', viewProject: 'Ver proyecto',
       testimonialsLabel: 'Recomendaciones', testimonialsHeadline: 'Lo que opinan mis colegas sobre mi trabajo',
       contactA: '¿Tienes una idea', contactB: 'en mente?', contactC: 'démosle', contactD: 'juntos un gran diseño',
       letsTalk: 'Conversemos', footerTagline: 'Diseñador en Figma y vibecodeado con Claude por Gian Carlos Chávez Sánchez.',
@@ -39,7 +39,7 @@
       valueTitle2: 'Co-creation with engineering', valueDesc2: "Robust design systems that speak the dev's language: tokens, components, clean handoff. Basic understanding of HTML5 and CSS.",
       expLabel: 'Experience', expHeadlinePre: '14 years working in', expHeadlineHl: 'the digital industry',
       eduLabel: 'Education', eduHeadlinePre: 'Continuous learning is part of', eduHeadlineHl: 'my everyday life',
-      certPlaceholder: 'Certificate', inProgress: 'In progress',
+      certPlaceholder: 'Certificate', inProgress: 'In progress', viewProject: 'View project',
       testimonialsLabel: 'Recommendations', testimonialsHeadline: 'What my colleagues say about my work',
       contactA: 'Got an idea', contactB: 'in mind?', contactC: "let's build", contactD: 'a great design together',
       letsTalk: "Let's talk", footerTagline: 'Designed in Figma and vibe-coded with Claude by Gian Carlos Chávez Sánchez.',
@@ -128,18 +128,16 @@
   ];
 
   var PROJECTS = [
-    { num: '01', href: 'proyectos/editor-dd3land.html', cover: 'assets/case-editor-dd3/editor-city-materials.webp', title: 'Editor DD3.land', tag: 'Product · Web app',
+    { num: '01', href: 'proyectos/editor-dd3land.html', cover: 'assets/case-editor-dd3/cover-editor.webp', title: 'Editor DD3.land', tag: 'Product · Web app',
       description: { es: 'Software de automatización de flujos internos para el equipo operativo.', en: 'Internal workflow automation software for the operations team.' } },
-    { num: '02', href: 'proyectos/dd3land.html', cover: 'assets/case-dd3land/aerial-city-cdmx.png', title: 'DD3.land', tag: 'Branding · 3D',
+    { num: '02', href: 'proyectos/dd3land.html', cover: 'assets/case-dd3land/cover-dd3land.webp', title: 'DD3.land', tag: 'Branding · 3D',
       description: { es: 'Metaverso del ecosistema de productos hipotecarios de la marca.', en: "The brand's mortgage product ecosystem metaverse." } },
-    { num: '03', href: 'proyectos/builder.html', cover: 'assets/case-builder/components-overview.webp', title: 'Build', tag: 'Design system',
+    { num: '03', href: 'proyectos/builder.html', cover: 'assets/case-builder/cover-build.webp', title: 'Build', tag: 'Design system',
       description: { es: 'Sistema de diseño escalable para la plataforma DD360.', en: 'Scalable design system for the DD360 platform.' } },
-    { num: '04', href: 'proyectos/revisores.html', cover: 'assets/case-revisores/revisores-05.png', title: 'Revisores', tag: 'B2B · UX',
+    { num: '04', href: 'proyectos/revisores.html', cover: 'assets/case-revisores/cover-revisores.webp', title: 'Revisores', tag: 'B2B · UX',
       description: { es: 'Digitalización de procesos B2B para Corporación Mexicana de Valuación.', en: 'B2B process digitization for Corporación Mexicana de Valuación.' } },
-    { num: '05', href: 'proyectos/dd360.html', cover: 'assets/case-dd360/home.webp', title: 'DD360 platform', tag: 'UX/UI · Fintech',
-      description: { es: 'Crédito digital y gestión de proyectos inmobiliarios en un solo ecosistema.', en: 'Digital credit and real-estate project management in one ecosystem.' } },
-    { num: '06', href: '#proyectos', noCover: true, title: 'Perú clima', tag: 'Mobile app',
-      description: { es: 'App de control climático para turistas locales y extranjeros.', en: 'Weather-tracking app for local and foreign tourists.' } }
+    { num: '05', href: 'proyectos/dd360.html', cover: 'assets/case-dd360/cover-dd360.webp', title: 'DD360 platform', tag: 'UX/UI · Fintech',
+      description: { es: 'Crédito digital y gestión de proyectos inmobiliarios en un solo ecosistema.', en: 'Digital credit and real-estate project management in one ecosystem.' } }
   ];
 
   var state = { lang: 'es', modalIndex: -1 };
@@ -222,27 +220,29 @@
     var lang = state.lang;
     var html = PROJECTS.map(function(p, i) {
       var mediaHtml = p.noCover
-        ? '<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#0c1408">' +
+        ? '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;background:#0c1408">' +
             '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(184,234,7,.5)" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>' +
             '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:600;font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.04em;text-transform:uppercase">' + STR[lang].inProgress + '</span>' +
           '</div>'
-        : '<img src="' + p.cover + '" alt="' + p.title + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(var(--img-scale));transition:transform .6s ease">';
-      var dir = (i % 2 === 0) ? 'left' : 'right';
-      return '<a href="' + p.href + '" data-reveal-x="' + dir + '" style="position:relative;height:300px;overflow:hidden;border:1px solid rgba(255,255,255,.1);display:block;--img-scale:1;--scrim-o:.55;--info-y:0px;transition:border-color .3s ease" data-hover="--img-scale:1.06;--scrim-o:.8;--info-y:-6px;border-color:#B8EA07" class="dprojcard">' +
-        mediaHtml +
-        '<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(1,10,0,.85) 0%,rgba(1,10,0,var(--scrim-o)) 45%,transparent 85%);transition:background .4s ease"></div>' +
-        '<span style="position:absolute;top:20px;left:20px;font-family:\'Bricolage Grotesque\',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.04em">' + p.num + '</span>' +
-        '<span style="position:absolute;top:20px;right:20px;font-family:\'Bricolage Grotesque\',sans-serif;font-weight:600;font-size:12px;color:#FFFFFF;background:rgba(1,10,0,.85);border:1px solid rgba(255,255,255,.25);padding:5px 11px;backdrop-filter:blur(4px)">' + p.tag + '</span>' +
-        '<div style="position:absolute;left:24px;right:24px;bottom:24px;transform:translateY(var(--info-y));transition:transform .4s ease">' +
-          '<h3 style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:700;font-size:22px;margin:0;color:#FFFFFF">' + p.title + '</h3>' +
-          '<p style="margin:8px 0 0;font-size:13.5px;color:#d4d4d8;line-height:1.55">' + p.description[lang] + '</p>' +
+        : '<img src="' + p.cover + '" alt="' + p.title + '" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:0 12px 0 0">';
+      return '<a href="' + p.href + '" style="position:sticky;top:' + (100 + i * 20) + 'px;display:grid;grid-template-columns:1fr 660px;height:326px;background:#070d05;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;box-shadow:0 -24px 60px rgba(0,0,0,.55);transition:border-color .3s ease,background-image .3s ease" data-hover="border-color:#B8EA07;background-image:radial-gradient(ellipse 480px 260px at 100% 0%,rgba(184,234,7,.12),transparent 70%)" class="dprojcard">' +
+        '<div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center;min-width:0">' +
+          '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">' +
+            '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.04em">' + p.num + '</span>' +
+            '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:600;font-size:12px;color:#a1a1aa;letter-spacing:.1em;text-transform:uppercase;border-left:1px solid rgba(255,255,255,.2);padding-left:10px">' + p.tag + '</span>' +
+          '</div>' +
+          '<h3 style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:700;font-size:clamp(24px,2.2vw,30px);margin:0;color:#FFFFFF">' + p.title + '</h3>' +
+          '<p style="margin:14px 0 0;font-size:14.5px;line-height:1.65;color:#a1a1aa;max-width:400px;min-height:2.65em;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">' + p.description[lang] + '</p>' +
+          '<span style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;width:fit-content;font-family:\'Bricolage Grotesque\',sans-serif;font-weight:700;font-size:13.5px;color:#FFFFFF;border:1px solid rgba(255,255,255,.3);padding:12px 20px;border-radius:2px;transition:background .2s ease,border-color .2s ease,color .2s ease;--pcta-invert:1" data-hover="background:#B8EA07;color:#010A00;border-color:#B8EA07;--pcta-invert:0">' + STR[lang].viewProject + '<img src="assets/icons/arrow-diagonal.svg" alt="" style="width:12px;height:12px;filter:brightness(0) invert(var(--pcta-invert));transition:filter .2s ease"></span>' +
+        '</div>' +
+        '<div class="dprojcard-media" style="box-sizing:border-box;width:100%;height:100%;overflow:hidden;padding:20px 32px 0 0">' +
+          mediaHtml +
         '</div>' +
       '</a>';
     }).join('');
     var grid = document.getElementById('projects-grid');
     grid.innerHTML = html;
     attachHover(grid);
-    observeRevealX(grid);
   }
 
   function testimonialCardHtml(t, lang, dir) {
@@ -449,83 +449,7 @@
     setTimeout(alignSubtext, 300);
 
     var heroEl3 = document.getElementById('hero');
-    var portraitImg = document.getElementById('hero-portrait-img');
-    var portraitCanvas = document.getElementById('hero-portrait-canvas');
-    var glitchInterval = null, particles = null, particleRAF = null, baseCache = null, pad = 160, pointer = null, holeRadius = 0;
-
-    function setupParticles() {
-      if (!portraitImg || !portraitCanvas || !portraitImg.complete) return;
-      var w = portraitImg.clientWidth, h = portraitImg.clientHeight;
-      if (!w || !h) return;
-      var off = document.createElement('canvas');
-      off.width = w; off.height = h;
-      var octx = off.getContext('2d');
-      octx.filter = 'grayscale(1) contrast(1.15) brightness(1.02)';
-      octx.drawImage(portraitImg, 0, 0, w, h);
-      var step = 4;
-      var data = octx.getImageData(0, 0, w, h).data;
-      var pts = [];
-      for (var y = 0; y < h; y += step) {
-        for (var x = 0; x < w; x += step) {
-          var i = (y * w + x) * 4;
-          var a = data[i + 3];
-          if (a < 40) continue;
-          pts.push({ x0: x + pad, y0: y + pad, x: x + pad, y: y + pad, vx: (Math.random() - 0.5) * 60, vy: (Math.random() - 0.5) * 60, r: data[i], g: data[i + 1], b: data[i + 2], a: a / 255 });
-        }
-      }
-      portraitCanvas.width = w + pad * 2; portraitCanvas.height = h + pad * 2;
-      portraitCanvas.style.width = (w + pad * 2) + 'px';
-      portraitCanvas.style.height = (h + pad * 2) + 'px';
-      portraitCanvas.style.left = -pad + 'px';
-      portraitCanvas.style.top = -pad + 'px';
-      particles = pts;
-      baseCache = off;
-    }
-
-    function drawParticles(t, holeTarget) {
-      if (!particles || !portraitCanvas || !baseCache) return;
-      var ctx = portraitCanvas.getContext('2d');
-      ctx.clearRect(0, 0, portraitCanvas.width, portraitCanvas.height);
-      var radius = 130;
-      holeRadius += (holeTarget - holeRadius) * 0.18;
-      ctx.drawImage(baseCache, pad, pad);
-      if (pointer && holeRadius > 1) {
-        ctx.save();
-        ctx.globalCompositeOperation = 'destination-out';
-        var grad = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, holeRadius);
-        grad.addColorStop(0, 'rgba(0,0,0,1)');
-        grad.addColorStop(0.65, 'rgba(0,0,0,1)');
-        grad.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(pointer.x, pointer.y, holeRadius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-      for (var k = 0; k < particles.length; k++) {
-        var p = particles[k];
-        var tx = p.x0, ty = p.y0;
-        if (pointer) {
-          var dx = p.x0 - pointer.x, dy = p.y0 - pointer.y;
-          var dist = Math.hypot(dx, dy);
-          if (dist > radius + 60) continue;
-          if (dist < radius) {
-            var force = (1 - dist / radius) * t;
-            var ang = Math.atan2(dy, dx);
-            tx = p.x0 + Math.cos(ang) * force * 55 + p.vx * force;
-            ty = p.y0 + Math.sin(ang) * force * 55 + p.vy * force;
-          }
-        } else if (Math.abs(p.x - p.x0) < 0.3 && Math.abs(p.y - p.y0) < 0.3) {
-          continue;
-        }
-        p.x += (tx - p.x) * 0.2;
-        p.y += (ty - p.y) * 0.2;
-        ctx.fillStyle = 'rgba(' + p.r + ',' + p.g + ',' + p.b + ',' + p.a + ')';
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
+    var glitchInterval = null;
 
     var isMobileParticles = window.matchMedia('(max-width: 640px)').matches;
     if (heroEl3 && !isMobileParticles) {
@@ -535,36 +459,10 @@
           var hl = document.getElementById('hero-headline');
           if (hl) { hl.style.animation = 'none'; void hl.offsetWidth; hl.style.animation = ''; }
         }, 1400);
-        setupParticles();
-        if (particles) {
-          portraitImg.style.opacity = '0';
-          portraitCanvas.style.opacity = '1';
-          if (particleRAF) cancelAnimationFrame(particleRAF);
-          (function loop() { drawParticles(1, 130); particleRAF = requestAnimationFrame(loop); })();
-        }
       });
-      function onPortraitMove(e) {
-        var r = portraitCanvas.getBoundingClientRect();
-        pointer = { x: e.clientX - r.left, y: e.clientY - r.top };
-      }
-      portraitCanvas.addEventListener('mousemove', onPortraitMove);
-      portraitImg.addEventListener('mousemove', onPortraitMove);
       heroEl3.addEventListener('mouseleave', function() {
         heroEl3.classList.remove('hero-hover');
         if (glitchInterval) clearInterval(glitchInterval);
-        if (particleRAF) cancelAnimationFrame(particleRAF);
-        if (particles) {
-          (function loop() {
-            drawParticles(0, 0);
-            var stillMoving = particles.some(function(p) { return Math.abs(p.x - p.x0) > 0.3 || Math.abs(p.y - p.y0) > 0.3; }) || holeRadius > 1;
-            if (stillMoving) { particleRAF = requestAnimationFrame(loop); }
-            else {
-              pointer = null;
-              portraitImg.style.opacity = '1';
-              portraitCanvas.style.opacity = '0';
-            }
-          })();
-        }
       });
     }
 

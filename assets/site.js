@@ -5,7 +5,7 @@
       navSobre: 'Sobre mí', navProyectos: 'Proyectos', navContacto: 'Contacto', navHablemos: 'Hablemos',
       avail: 'Disponible para trabajar', holaSoy: 'Hola soy',
       heroSubtext1: 'Diseñador', heroSubtext2: 'de producto | UX/UI',
-      heroCta: 'Conoce más de mí', scrollCue: 'DESPLAZA PARA EXPLORAR',
+      heroCta: 'Conoce más de mí', scrollCue: 'DESPLAZA PARA EXPLORAR', zoomHint: 'Toca para ampliar',
       marquee: 'PRODUCT DESIGNER ✳ UX/UI ✳ DIRECCIÓN DE ARTE ✳ VIBE CODING ✳',
       availImmediate: 'Disponibilidad inmediata', location: 'Lima, Perú 🇵🇪', englishLevel: '33 años',
       cvButton: 'Descargar mi CV', introText: 'Mi nombre es Gian Carlos Chavez, pero todos me dicen',
@@ -27,7 +27,7 @@
       navSobre: 'About', navProyectos: 'Projects', navContacto: 'Contact', navHablemos: "Let's talk",
       avail: 'Available for work', holaSoy: "Hi, I'm",
       heroSubtext1: 'Product', heroSubtext2: 'Designer | UX/UI',
-      heroCta: 'Get to know me', scrollCue: 'SCROLL TO EXPLORE',
+      heroCta: 'Get to know me', scrollCue: 'SCROLL TO EXPLORE', zoomHint: 'Tap to zoom',
       marquee: 'PRODUCT DESIGNER ✳ UX/UI ✳ ART DIRECTION ✳ VIBE CODING ✳',
       availImmediate: 'Available immediately', location: 'Lima, Peru 🇵🇪', englishLevel: '33 years old',
       cvButton: 'Download my CV', introText: 'My name is Gian Carlos Chavez, but everyone calls me',
@@ -48,6 +48,9 @@
   };
 
   var EDUCATION = [
+    { title: { es: 'Bootcamp de IA y No Code', en: 'AI & No Code Bootcamp' }, org: 'Labora', year: '2026', certs: [
+      { img: 'assets/certs/Certificado-Labora-Gian-Carlos-Chavez-Sanchez.webp', label: 'Certificado de aprobación' }
+    ] },
     { title: { es: 'Inteligencia Artificial para UX/UI Designers', en: 'AI for UX/UI Designers' }, org: 'uxcristopher', year: '2026', certs: [
       { img: 'assets/certs/uxcristopher-ia-uxui.webp', label: 'Certificado de finalización' }
     ] },
@@ -96,9 +99,12 @@
     { top: 160, num: '04', role: { es: 'Diseñador UX/UI', en: 'UX/UI Designer' }, companyList: ['Dacodes', 'dd3 hipotecaria', 'Freelance'], period: '2022–2024',
       description: { es: 'Obtuve mucho aprendizaje del sector hipotecario e inmobiliario. Realizando research continuo de competencia, flujos complejos e iterativos, prototipos para validar con stakeholders. Comunicación constante con el equipo de desarrollo y product owner.', en: 'I gained a lot of learning from the mortgage and real-estate sector, running continuous competitor research, complex and iterative flows, and prototypes to validate with stakeholders. Constant communication with the development team and product owner.' },
       tools: [ 'Figma', 'Tailwind', 'Miro', 'Jira', 'Slack' ].map(iconTool) },
-    { top: 180, num: '05', role: { es: 'Diseñador de producto senior', en: 'Senior Product Designer' }, companyList: ['dd3 hipotecaria', 'DD360 Platform', 'Corp. Mexicana de Valuación'], period: '2024–hoy',
+    { top: 180, num: '05', role: { es: 'Diseñador de producto senior', en: 'Senior Product Designer' }, companyList: ['dd3 hipotecaria', 'DD360 Platform', 'Corp. Mexicana de Valuación'], period: '2024–2026',
       description: { es: 'Fui internalizado directamente por valor estratégico hacia el cliente. Diseñé el sistema de digitalización de avalúos B2B que redujo el procesamiento de 3 días a 24 horas. Colaboración directa con C-level para definir roadmap de producto y arquitectura de plataformas, desarrollo web no-code asistido por IA. El Ownership me dió mucha participación para el desarrollo de propuestas ', en: 'I was internalized directly for strategic value to the client. I designed the B2B appraisal digitization system that cut processing time from 3 days to 24 hours. Direct collaboration with C-level to define product roadmap and platform architecture, AI-assisted no-code web development. Ownership gave me a lot of involvement in developing proposals.' },
-      tools: [ 'Figma', 'HTML5', 'CSS', 'JavaScript', 'GitHub', 'Visual Studio Code', 'Claude', 'Jitter', 'Miro', 'Lovable' ].map(iconTool) }
+      tools: [ 'Figma', 'HTML5', 'CSS', 'JavaScript', 'GitHub', 'Visual Studio Code', 'Claude', 'Jitter', 'Miro', 'Lovable' ].map(iconTool) },
+    { top: 200, num: '06', role: { es: 'Diseñador UX/UI', en: 'UX/UI Designer' }, companyList: ['CSTI Corp', 'Laureate Education'], period: '2026–actualidad',
+      description: { es: 'Impulsé la escalabilidad del Design System "LauCore" con componentes basados en slots, auditando y mejorando variantes y propiedades accesibles para facilitar su adopción en todos los squads. Realicé research de plataformas educativas y de gamificación, prototipé en HTML con Claude y moderé tests de usabilidad para sustentar decisiones ante stakeholders. Co-facilité un workshop sobre slots en Figma para diseño y desarrollo.', en: 'I drove the scalability of the "LauCore" Design System with slot-based components, auditing and improving accessible variants and properties to ease adoption across all squads. I researched educational and gamification platforms, prototyped in HTML with Claude and moderated usability tests to support decisions with stakeholders. I co-facilitated a workshop on slots in Figma for design and development.' },
+      tools: [ 'Figma', 'Miro', 'Claude', 'HTML5' ].map(iconTool) }
   ];
 
   function iconTool(name) {
@@ -372,10 +378,19 @@
     document.getElementById('modal-title').textContent = cert.courseTitle;
     document.getElementById('modal-org').textContent = cert.org + ' · ' + cert.year;
     document.getElementById('cert-modal').style.display = 'flex';
+    setZoom(false);
   }
   function closeModal() {
     state.modalIndex = -1;
+    setZoom(false);
     document.getElementById('cert-modal').style.display = 'none';
+  }
+  // Zoom de certificado (solo mobile)
+  function setZoom(on) {
+    var wrap = document.getElementById('modal-img-wrap');
+    wrap.classList.toggle('zoomed', on);
+    document.getElementById('cert-modal').classList.toggle('zoom-on', on);
+    if (!on) { wrap.scrollTop = 0; wrap.scrollLeft = 0; }
   }
   function navModal(dir) {
     var flat = certFlatList();
@@ -414,6 +429,10 @@
     document.getElementById('modal-prev-btn').addEventListener('click', function(e) { e.stopPropagation(); navModal(-1); });
     document.getElementById('modal-next-btn').addEventListener('click', function(e) { e.stopPropagation(); navModal(1); });
     document.getElementById('modal-content').addEventListener('click', function(e) { e.stopPropagation(); });
+    document.getElementById('modal-img').addEventListener('click', function() {
+      if (window.matchMedia('(max-width: 768px)').matches) setZoom(!document.getElementById('modal-img-wrap').classList.contains('zoomed'));
+    });
+    document.getElementById('modal-zoom-close').addEventListener('click', function(e) { e.stopPropagation(); setZoom(false); });
 
     attachHover(document);
 

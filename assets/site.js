@@ -103,7 +103,7 @@
       description: { es: 'Fui internalizado directamente por valor estratégico hacia el cliente. Diseñé el sistema de digitalización de avalúos B2B que redujo el procesamiento de 3 días a 24 horas. Colaboración directa con C-level para definir roadmap de producto y arquitectura de plataformas, desarrollo web no-code asistido por IA. El Ownership me dió mucha participación para el desarrollo de propuestas ', en: 'I was internalized directly for strategic value to the client. I designed the B2B appraisal digitization system that cut processing time from 3 days to 24 hours. Direct collaboration with C-level to define product roadmap and platform architecture, AI-assisted no-code web development. Ownership gave me a lot of involvement in developing proposals.' },
       tools: [ 'Figma', 'HTML5', 'CSS', 'JavaScript', 'GitHub', 'Visual Studio Code', 'Claude', 'Jitter', 'Miro', 'Lovable' ].map(iconTool) },
     { top: 200, num: '06', role: { es: 'Diseñador UX/UI', en: 'UX/UI Designer' }, companyList: ['CSTI Corp', 'Laureate Education'], period: '2026–actualidad',
-      description: { es: 'Impulsé la escalabilidad del Design System "LauCore" con componentes basados en slots, auditando y mejorando variantes y propiedades accesibles para facilitar su adopción en todos los squads. Realicé research de plataformas educativas y de gamificación, prototipé en HTML con Claude y moderé tests de usabilidad para sustentar decisiones ante stakeholders. Co-facilité un workshop sobre slots en Figma para diseño y desarrollo.', en: 'I drove the scalability of the "LauCore" Design System with slot-based components, auditing and improving accessible variants and properties to ease adoption across all squads. I researched educational and gamification platforms, prototyped in HTML with Claude and moderated usability tests to support decisions with stakeholders. I co-facilitated a workshop on slots in Figma for design and development.' },
+      description: { es: 'Impulsé la escalabilidad del Design System "LauCore" con componentes basados en slots, auditando, mejorando y creando variantes con propiedades accesibles para facilitar su adopción en todos los squads. Realicé research de plataformas educativas y de gamificación, prototipé en HTML con Claude y moderé tests de usabilidad para sustentar decisiones ante stakeholders. Co-facilité un workshop sobre slots en Figma para diseño y desarrollo.', en: 'I drove the scalability of the "LauCore" Design System with slot-based components, auditing and improving accessible variants and properties to ease adoption across all squads. I researched educational and gamification platforms, prototyped in HTML with Claude and moderated usability tests to support decisions with stakeholders. I co-facilitated a workshop on slots in Figma for design and development.' },
       tools: [ 'Figma', 'Miro', 'Claude', 'HTML5' ].map(iconTool) }
   ];
 
@@ -230,8 +230,8 @@
             '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(184,234,7,.5)" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>' +
             '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:600;font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.04em;text-transform:uppercase">' + STR[lang].inProgress + '</span>' +
           '</div>'
-        : '<img src="' + p.cover + '" alt="' + p.title + '" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:0 12px 0 0">';
-      return '<a href="' + p.href + '" style="position:sticky;top:' + (100 + i * 20) + 'px;display:grid;grid-template-columns:1fr 660px;height:326px;background:#070d05;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;box-shadow:0 -24px 60px rgba(0,0,0,.55);transition:border-color .3s ease,background-image .3s ease" data-hover="border-color:#B8EA07;background-image:radial-gradient(ellipse 480px 260px at 100% 0%,rgba(184,234,7,.12),transparent 70%)" class="dprojcard">' +
+        : '<img src="' + p.cover + '" alt="' + p.title + '" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:0">';
+      return '<a href="' + p.href + '" style="position:sticky;top:' + (100 + i * 20) + 'px;display:grid;grid-template-columns:1fr 660px;height:326px;background:#070d05;border:1px solid rgba(255,255,255,.1);border-radius:0;overflow:hidden;box-shadow:0 -24px 60px rgba(0,0,0,.55);transition:border-color .3s ease,background-image .3s ease" data-hover="border-color:#B8EA07;background-image:radial-gradient(ellipse 480px 260px at 100% 0%,rgba(184,234,7,.12),transparent 70%)" class="dprojcard">' +
         '<div style="padding:40px 44px;display:flex;flex-direction:column;justify-content:center;min-width:0">' +
           '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">' +
             '<span style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:800;font-size:13px;color:#B8EA07;letter-spacing:.04em">' + p.num + '</span>' +
@@ -439,7 +439,6 @@
     // Header / scroll / particle logic (adapted from original)
     var header = document.getElementById('site-header');
     var spacer = document.getElementById('header-spacer');
-    var avail = document.getElementById('avail-badge');
     var track = document.getElementById('scroll-progress-track');
     var bar = document.getElementById('scroll-progress-bar');
     if (header && spacer) spacer.style.height = header.getBoundingClientRect().height + 'px';
@@ -515,7 +514,6 @@
         header.style.borderBottom = scrolled ? '1px solid rgba(184,234,7,.25)' : '1px solid rgba(255,255,255,.1)';
         header.style.boxShadow = 'none';
       }
-      if (avail) avail.style.display = 'flex';
       var blurEl = document.getElementById('sobre-card-blur');
       var cardEl = document.querySelector('[data-sobre-card]');
       if (blurEl && cardEl) {
